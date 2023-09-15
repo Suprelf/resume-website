@@ -1,4 +1,92 @@
+@font-face {
+    font-family: 'Rubik';
+    src: url(https://fonts.googleapis.com/css2?family=Rubik);
+}
+
+$primary-color: #ffffff;
+$secondary-color: #1e1e1e;
+$accent-color: #ff8000;
+
+
+
 body {
+    font-family: 'Rubik', sans-serif;;
+    background-color: $primary-color;
+
     padding: 0;
     margin: 0;
+}
+
+.section {
+    height: 100vh;
+    padding: 0 10%;
+    
+    .top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+
+        height: 100%;
+    }
+    .top-left {
+        background-color: $primary-color;
+        padding: 24px;
+        
+        box-shadow: 0 0 1rem 1rem $primary-color;
+
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        font-size: 2rem;
+
+        border-left: solid 6px $accent-color;
+
+        h1 {
+            margin-top: 0;
+        }
+
+    }
+    .top-right {
+        background-color: rgba($color: $accent-color, $alpha: 0.8);
+        box-shadow: 0 0 1rem 1.5rem $primary-color; 
+    
+        .img-accent {
+            position: relative;
+            left: -10px;
+            top: -5px;
+
+            img {
+                -webkit-transform: scaleX(-1);
+                transform: scaleX(-1);
+            }
+        }
+    }
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding: 0 24px;
+
+    .header-phone {
+        border: 1px solid $secondary-color;
+    }
+    .header-mail {
+        border: 1px solid $secondary-color;
+    }
+    .header-name {
+        margin-right: auto;
+    }
+
+
+}
+
+#tsparticles {
+    position: fixed;
+    width: 100%;
+    z-index: -10;
 }
