@@ -7,33 +7,52 @@ $primary-color: #ffffff;
 $secondary-color: #1e1e1e;
 $accent-color: #ff8000;
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: $primary-color;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $accent-color;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $secondary-color;
+}
+
 
 
 body {
-    font-family: 'Rubik', sans-serif;;
+    font-family: 'Rubik', sans-serif;
+
     background-color: $primary-color;
 
     padding: 0;
     margin: 0;
+
+    overflow-x: hidden;
 }
 
 .section {
     height: 100vh;
     padding: 0 10%;
-    
+
     .section-flex {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
 
-
         height: 100%;
     }
+
     .name-left {
         background-color: $primary-color;
         padding: 24px;
-        
+
         box-shadow: 0 0 1rem 1rem $primary-color;
 
         display: flex;
@@ -49,10 +68,11 @@ body {
         }
 
     }
+
     .name-right {
         background-color: rgba($color: $accent-color, $alpha: 0.8);
-        box-shadow: 0 0 1rem 1.5rem $primary-color; 
-    
+        box-shadow: 0 0 1rem 1.5rem $primary-color;
+
         .img-accent {
             position: relative;
             left: -10px;
@@ -67,9 +87,9 @@ body {
 
     .card {
         background-color: $primary-color;
-        padding: 4px 24px;
+        padding: 6px 24px;
         height: 70%;
-        
+
         box-shadow: 0 0 1rem 1rem $primary-color;
 
         display: flex;
@@ -79,32 +99,65 @@ body {
         border-left: solid 4px $accent-color;
 
         font-size: 1.3rem;
-      
-        .card-name{
+
+        .card-name {
             margin: 10px 0px;
             font-size: 2rem;
         }
+
+        #card-name-left {
+            padding-left: 20px;
+        }
+
+        #card-name-right {
+            padding-right: 20px;
+        }
+
+        #skills-scroll {
+            padding-left: 20px;
+            direction: rtl;
+        }
+
+        #skills-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        #exp-scroll {
+            padding-right: 20px;
+            direction: ltr;
+        }
+
+        #exp-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+
         .card-main {
             display: flex;
             flex-direction: column;
             gap: 24px;
+            padding-left: 4px;
+
+            overflow: auto;
+
         }
 
         .skill-main {
             display: flex;
             flex-direction: column;
             gap: 6px;
+            direction: ltr;
 
-            .skill-name{
+            .skill-name {
                 font-size: 1.4rem;
             }
+
             .skill-bar {
                 width: 14rem;
                 height: 5px;
                 border-radius: 64px;
                 background-color: $secondary-color;
 
-                .skill-bar-fill{
+                .skill-bar-fill {
                     width: 10rem;
                     height: inherit;
                     border-radius: inherit;
@@ -112,7 +165,43 @@ body {
                 }
             }
         }
+
+        .exp-main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            gap: 6px;
+
+            max-width: 60vw;
+
+            .exp-header {
+                display: flex;
+                flex-direction: row;
+                gap: inherit;
+
+                .exp-year {
+                    color: $accent-color;
+                    font-size: inherit;
+                    text-align: center;
+                }
+
+                .exp-divider {
+                    padding: 0 18px;
+                    text-align: center;
+                }
+
+                .exp-place {
+                    text-decoration: underline;
+
+                }
+            }
+
+            .exp-info {
+                flex-direction: column;
+            }
+        }
     }
+
     .borderRight {
         border: none;
         border-right: solid 4px $accent-color;
@@ -129,9 +218,11 @@ header {
     .header-phone {
         border: 1px solid $secondary-color;
     }
+
     .header-mail {
         border: 1px solid $secondary-color;
     }
+
     .header-name {
         margin-right: auto;
     }
