@@ -65,9 +65,9 @@ body {
         }
     }
 
-    .stats-left {
+    .card {
         background-color: $primary-color;
-        padding: 24px;
+        padding: 4px 24px;
         height: 70%;
         
         box-shadow: 0 0 1rem 1rem $primary-color;
@@ -79,77 +79,45 @@ body {
         border-left: solid 4px $accent-color;
 
         font-size: 1.3rem;
-        h3 {
+      
+        .card-name{
+            margin: 10px 0px;
             font-size: 2rem;
         }
-    }
-    .stats-right {
-        background-color: $primary-color;
-        padding: 24px;
-        height: 70%;
-        
-        box-shadow: 0 0 1rem 1rem $primary-color;
-
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-
-        border-right: solid 4px $accent-color;
-
-        font-size: 1.3rem;
-        h3 {
-            font-size: 2rem;
-        }
-        
-    }
-    .stats-education {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .box {
-        padding: 12px;
-        border-left: solid 4px $accent-color;;
-
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        
-        gap: 16px;
-
-        .year {
-            width: 2rem;
-            align-self: center;
-            margin: auto;
-            flex-basis: 25%;
-            color: $accent-color;
-            font-size: 1.5rem;
-        }
-        .place {
-            flex-basis: 25%;
-            font-size: 1.5rem;
-        }
-        .subject {
-            flex-basis: 50%
+        .card-main {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
 
-        .bar {
-            width: 16rem;
-            height: 4px;
-            background-color: $secondary-color;
-            border-radius: 10px;
+        .skill-main {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
 
-            .bar-fill {
-                width: 50%;
-                height: 4px;
-                background-color: $accent-color;
-                border-radius: 10px;
-        
-                z-index: 50;
+            .skill-name{
+                font-size: 1.4rem;
+            }
+            .skill-bar {
+                width: 14rem;
+                height: 5px;
+                border-radius: 64px;
+                background-color: $secondary-color;
+
+                .skill-bar-fill{
+                    width: 10rem;
+                    height: inherit;
+                    border-radius: inherit;
+                    background-color: $accent-color;
+                }
             }
         }
     }
+    .borderRight {
+        border: none;
+        border-right: solid 4px $accent-color;
+    }
+
 }
 
 header {
